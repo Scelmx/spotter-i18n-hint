@@ -63,7 +63,8 @@ async function globalSearch(keyword: string, source: Record<string, string>) {
 
         if (results.length > 0) {
             const files = await vscode.workspace.findFiles(
-                '**/routes/**/*.{ts,tsx}'
+                '**/routes/**/*.{ts,tsx}',
+                '**​/node_modules/**,**/dist/**,**/i18n-scanner/**'
             );
             const fileResults = new Map<string, string[]>();
             const totalFiles = files.length;
